@@ -1,0 +1,448 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Modbus sensors for Power World PW030 (unit 1).
+# Include under sensors: in the hub for the heat pump in modbus.yaml.
+
+- name: "PW030 Zapnutí a stav řídicího slova"
+  unique_id: pw030_native_0000
+  slave: 1
+  address: 0x0000
+  input_type: holding
+  data_type: uint16
+  scan_interval: 15
+
+- name: "PW030 Provozní režim"
+  unique_id: pw030_native_0004
+  slave: 1
+  address: 0x0004
+  input_type: holding
+  data_type: uint16
+  scan_interval: 15
+
+- name: "PW030 Cílová teplota TUV"
+  unique_id: pw030_native_008f
+  slave: 1
+  address: 0x008F
+  input_type: holding
+  data_type: uint16
+  scan_interval: 15
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Cílová teplota chlazení"
+  unique_id: pw030_native_0090
+  slave: 1
+  address: 0x0090
+  input_type: holding
+  data_type: uint16
+  scan_interval: 15
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Cílová teplota vytápění"
+  unique_id: pw030_native_0091
+  slave: 1
+  address: 0x0091
+  input_type: holding
+  data_type: uint16
+  scan_interval: 15
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Stav jednotky"
+  unique_id: pw030_native_8002
+  slave: 1
+  address: 0x8002
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Příznaky výbavy a odmrazování"
+  unique_id: pw030_native_8003
+  slave: 1
+  address: 0x8003
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Výstupní slovo 1"
+  unique_id: pw030_native_8004
+  slave: 1
+  address: 0x8004
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Výstupní slovo 2"
+  unique_id: pw030_native_8005
+  slave: 1
+  address: 0x8005
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Výstupní slovo 3"
+  unique_id: pw030_native_8006
+  slave: 1
+  address: 0x8006
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 1"
+  unique_id: pw030_native_8007
+  slave: 1
+  address: 0x8007
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 2"
+  unique_id: pw030_native_8008
+  slave: 1
+  address: 0x8008
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 3"
+  unique_id: pw030_native_8009
+  slave: 1
+  address: 0x8009
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 4"
+  unique_id: pw030_native_800a
+  slave: 1
+  address: 0x800A
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 5"
+  unique_id: pw030_native_800b
+  slave: 1
+  address: 0x800B
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 6"
+  unique_id: pw030_native_800c
+  slave: 1
+  address: 0x800C
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Poruchové slovo 7"
+  unique_id: pw030_native_800d
+  slave: 1
+  address: 0x800D
+  input_type: holding
+  data_type: uint16
+  scan_interval: 30
+
+- name: "PW030 Teplota vody na vstupu"
+  unique_id: pw030_native_800e
+  slave: 1
+  address: 0x800E
+  input_type: holding
+  data_type: int16
+  scan_interval: 15
+  scale: 0.1
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota zásobníku TUV"
+  unique_id: pw030_native_800f
+  slave: 1
+  address: 0x800F
+  input_type: holding
+  data_type: int16
+  scan_interval: 15
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Venkovní teplota"
+  unique_id: pw030_native_8011
+  slave: 1
+  address: 0x8011
+  input_type: holding
+  data_type: int16
+  scan_interval: 15
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota vody na výstupu"
+  unique_id: pw030_native_8012
+  slave: 1
+  address: 0x8012
+  input_type: holding
+  data_type: int16
+  scan_interval: 15
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota sání"
+  unique_id: pw030_native_8015
+  slave: 1
+  address: 0x8015
+  input_type: holding
+  data_type: int16
+  scan_interval: 60
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota venkovního výměníku"
+  unique_id: pw030_native_8016
+  slave: 1
+  address: 0x8016
+  input_type: holding
+  data_type: int16
+  scan_interval: 60
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota výměníku při chlazení"
+  unique_id: pw030_native_801a
+  slave: 1
+  address: 0x801A
+  input_type: holding
+  data_type: int16
+  scan_interval: 60
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Teplota výtlaku"
+  unique_id: pw030_native_801b
+  slave: 1
+  address: 0x801B
+  input_type: holding
+  data_type: int16
+  scan_interval: 60
+  scale: 0.5
+  precision: 1
+  state_class: measurement
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- name: "PW030 Otevření hlavního expanzního ventilu"
+  unique_id: pw030_native_801c
+  slave: 1
+  address: 0x801C
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Otevření pomocného expanzního ventilu"
+  unique_id: pw030_native_801d
+  slave: 1
+  address: 0x801D
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Skutečná frekvence kompresoru"
+  unique_id: pw030_native_801e
+  slave: 1
+  address: 0x801E
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+  unit_of_measurement: Hz
+  device_class: frequency
+
+- name: "PW030 Porucha měniče – dolní bajt"
+  unique_id: pw030_native_801f
+  slave: 1
+  address: 0x801F
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Porucha měniče – horní bajt"
+  unique_id: pw030_native_8020
+  slave: 1
+  address: 0x8020
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Napětí DC meziobvodu"
+  unique_id: pw030_native_8021
+  slave: 1
+  address: 0x8021
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+  unit_of_measurement: V
+  device_class: voltage
+
+- name: "PW030 Cílová frekvence kompresoru"
+  unique_id: pw030_native_8024
+  slave: 1
+  address: 0x8024
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+  unit_of_measurement: Hz
+  device_class: frequency
+
+- name: "PW030 Proud kompresoru"
+  unique_id: pw030_native_8025
+  slave: 1
+  address: 0x8025
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+  scale: 0.1
+  precision: 1
+  unit_of_measurement: A
+  device_class: current
+
+- name: "PW030 Otáčky DC ventilátoru 1"
+  unique_id: pw030_native_8026
+  slave: 1
+  address: 0x8026
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Teplota přepočtená z nízkého tlaku"
+  unique_id: pw030_native_8028
+  slave: 1
+  address: 0x8028
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+- name: "PW030 Skutečná rychlost DC oběhového čerpadla"
+  unique_id: pw030_native_802a
+  slave: 1
+  address: 0x802A
+  input_type: holding
+  data_type: uint16
+  scan_interval: 60
+
+# Service settings read in non-overlapping blocks.
+
+- name: pw030_raw_0001
+  unique_id: pw030_raw_0001
+  slave: 1
+  address: 0x0001
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">3H"
+  count: 3
+  scan_interval: 15
+
+- name: pw030_raw_0005
+  unique_id: pw030_raw_0005
+  slave: 1
+  address: 0x0005
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_002d
+  unique_id: pw030_raw_002d
+  slave: 1
+  address: 0x002D
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_0055
+  unique_id: pw030_raw_0055
+  slave: 1
+  address: 0x0055
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_007d
+  unique_id: pw030_raw_007d
+  slave: 1
+  address: 0x007D
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">18H"
+  count: 18
+  scan_interval: 300
+
+- name: pw030_raw_0092
+  unique_id: pw030_raw_0092
+  slave: 1
+  address: 0x0092
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_00ba
+  unique_id: pw030_raw_00ba
+  slave: 1
+  address: 0x00BA
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_00e2
+  unique_id: pw030_raw_00e2
+  slave: 1
+  address: 0x00E2
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">40H"
+  count: 40
+  scan_interval: 300
+
+- name: pw030_raw_010a
+  unique_id: pw030_raw_010a
+  slave: 1
+  address: 0x010A
+  input_type: holding
+  data_type: custom
+  precision: 0
+  structure: ">3H"
+  count: 3
+  scan_interval: 300
