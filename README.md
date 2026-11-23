@@ -101,6 +101,8 @@ Zobrazená aktuální teplota je teplota vratné vody, nikoli místnosti. V rež
 
 Karta má společný rozsah 7–60 °C. Skript zápisu kontroluje rozsah podle režimu: vytápění 15–50 °C, chlazení 7–30 °C, TUV 28–60 °C. Hodnota mimo rozsah daného režimu se nezapíše. V kombinovaném režimu karta nastavuje teplotu vytápění nebo chlazení; teplota TUV má vlastní ovladač. Vypnutí přes climate vypíná celé čerpadlo včetně ohřevu TUV.
 
+Frekvence při ohřevu TUV může být odlišná od limitu tichého vytápění. Parametr R14 a pozorované chování popisuje [frekvence kompresoru při ohřevu TUV](docs/modbus-registers.md#frekvence-kompresoru-při-ohřevu-tuv).
+
 ## Reference
 
 - [Mapa registrů, převody a ruční zápis](docs/modbus-registers.md)

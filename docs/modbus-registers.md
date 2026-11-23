@@ -10,6 +10,23 @@ Mapa vychází z protokolu PW58332 V1.01. U jednotky PW58286 je ověřené čten
 - Ochrana a obnovení nízkého tlaku (`0x0044`, `0x0045`), teplota dovolené (`0x00F2`) a příznak časování tichého režimu (`0x00F5`) se zobrazují jako surové hodnoty. Mapa je označuje jako zapisovatelné a chybí v ní převod, rozsah nebo rozpis bitů.
 - Stavové a poruchové registry se zobrazují jako číselná slova. Servisní balíček poskytuje i binární entity jednotlivých popsaných bitů.
 
+## Frekvence kompresoru při ohřevu TUV
+
+Protokol uvádí **R14 — Hot water mode compensation compressor frequency**, registr `0x00FF`, s rozsahem **−50 až +20 Hz**. Jde o frekvenční korekci pro ohřev TUV. R30 (`0x00EF`) je popsaný jako maximální frekvence při tichém vytápění; není to pevná provozní frekvence pro všechny režimy. [Původní protokol PW58332 V1.01](podklady/Poolworld_PW58332_MODBUS_protocal_V1.01.doc)
+
+Na jednotce PW030-DKZLRS-A s deskou PW58286 bylo 23. 11. 2026 zaznamenáno:
+
+| Údaj | Hodnota | Způsob ověření |
+| --- | --- | --- |
+| R30 — limit tichého vytápění | 50 Hz | Odečet registru `0x00EF` |
+| R14 — korekce pro TUV | −5 Hz | Odečet `0x00FF = 65531`, znaménkový převod |
+| Skutečná / cílová frekvence při vytápění | 49 / 50 Hz | Odečet `0x801E` / `0x8024` |
+| Skutečná frekvence při ohřevu TUV | 44 Hz | Odečet skutečné frekvence v HA |
+
+Rozdíl mezi skutečnými frekvencemi 49 a 44 Hz odpovídá korekci −5 Hz. **Jde o pozorovanou shodu, nikoli o potvrzený obecný vzorec `výsledná frekvence = R30 + R14`.** Protokol neuvádí základ pro výpočet korekce ani pořadí uplatnění limitů; cílová frekvence při popsaném ohřevu TUV nebyla samostatně načtená.
+
+V balíčku se R14 zobrazuje jako `sensor.pw030_reg_00ff` a je dostupný také v servisním výběru. Hodnota `65531` znamená při znaménkovém 16bitovém převodu `−5`, nikoli 65531 Hz. R14 není v protokolu popsaný jako parametr návratu oleje a toto pozorování nepotvrzuje chování olejového cyklu.
+
 ## Zápis v Home Assistantu
 
 Servisní výběr zobrazuje hodnotu, jednotku a povolený rozsah. Pole **PW030 Nová hodnota** přijímá desetinnou tečku i čárku. Výčty používají číselný kód a příznaky hodnoty 0 nebo 1. Ovladače se zpřístupní po zapnutí **PW030 Povolit zápis**. Skript načte aktuální hodnotu, zapíše změnu a výsledek ověří. Při změně bitu zachovává ostatní bity načteného slova. Souběžný zápis do stejného registru z panelu může mezi čtením a zápisem změnit jeho obsah. Řídicí jednotka při zápisu ukládá nastavení do paměti.
