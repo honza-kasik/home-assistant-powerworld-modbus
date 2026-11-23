@@ -6,6 +6,12 @@ Konfigurace byla ověřena s Home Assistant Core **2026.11.2**. Zápis byl ově�
 
 Konfigurace používá Modbus adresu čerpadla `1`. Ověřené parametry linky RS‑485 jsou `9600 8N1`. Seznam registrů je společný pro USB adaptér RS‑485 i síťový převodník.
 
+## Svorkovnice na ověřené desce
+
+Fotografie zapojení u jednotky PW030-DKZLRS-A s deskou PW58286 (`2022-05-25L`). Modbus je připojený k modré třípólové šroubové svorkovnici u spodního okraje desky. V orientaci fotografie jsou svorky zleva **GND – A – B**: GND je volná, na A je oranžový vodič a na B bílý vodič. Fotografie zachycuje konkrétní instalaci. Popis pinů a schéma jsou v [podkladech k zapojení](docs/modbus-port-research.md).
+
+<img src="docs/podklady/pw58286-modbus-svorkovnice.png" alt="Svorkovnice Modbus na spodním okraji desky PW58286: zleva volná GND, A s oranžovým vodičem a B s bílým vodičem" width="640">
+
 ## Proč jsou dva YAML soubory
 
 `pw030_modbus_sensors.yaml` definuje čtení registrů čerpadla a vytváří Modbus senzory. Patří pod `sensors:` příslušného hubu a funguje samostatně.

@@ -4,6 +4,8 @@ Jednotka má štítek `PW58286` s označením `2022-05-25L`. Přes převodník s
 
 ## Konektory a přepínače
 
+Na [fotografii ověřené instalace](podklady/pw58286-modbus-svorkovnice.png) je modrá třípólová svorkovnice u spodního okraje desky. V této orientaci jsou svorky zleva **GND – A – B**. GND je nezapojená, oranžový vodič je na A a bílý na B. Barvy popisují zapojení této konkrétní instalace.
+
 - Schéma jednofázové jednotky PW030/040-DKZLRS-A uvádí desku `CC1010B`, výkres `803004-2978`. Na výkresu jsou zleva doprava piny `CN485` v pořadí `GND`, `A`, `B` a svorky `CN9` v pořadí `A`, `B`. Kabel ovládacího panelu vede do `CN6`. Účel `CN485` a `CN9` pro externí Modbus a sériové nastavení příručka neupřesňuje. [Instalační příručka Power World, str. 22](https://svt.sfzp.cz/stahnout-soubor/YKNZmQipmY7wNSHYRv0Pb8GfpORv6iQgelFnOHEy#page=25)
 - Tabulka na stejném schématu přiřazuje `SW1` konfiguraci výbavy. Pozice 1 povoluje `DC 1`, pozice 2 je rezervovaná, pozice 3 nastavuje dostupnost ohřevu TUV a pozice 4 chlazení. Tabulka adresových přepínačů z protokolu `PW58332` se proto na `SW1` této desky nevztahuje. [Instalační příručka Power World, str. 22](https://svt.sfzp.cz/stahnout-soubor/YKNZmQipmY7wNSHYRv0Pb8GfpORv6iQgelFnOHEy#page=25) · [PW58332 V1.01](podklady/Poolworld_PW58332_MODBUS_protocal_V1.01.doc)
 - Funkční externí připojení přes `CN485` popisuje autor integrace pro Power World **R290**. Jeho zkušenost podporuje volbu `CN485` jako prvního kandidáta na `PW58286`. Zapojení jeho konkrétního kabelu platí pro jeho jednotku. [Záznam autora integrace pro R290](https://github.com/Mike19700/domoticz-PowerWorld-heat-pump#readme)

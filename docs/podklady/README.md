@@ -8,6 +8,7 @@ Konfigurace vychází z dokumentu `Poolworld_PW58332_MODBUS_protocal_V1.01.doc`,
 - [Příručka Power World R32 EVI Full Inverter](POWER-WORLD-R32-EVI-FULL-INVERTER-Heat-Pump-Manual.pdf)
 - [Český návod — sken](navod-tc_powerworld.pdf)
 - [Obrázek svorkovnice Modbus](tepelne-cerpadlo_modbus-terminal.png)
+- [Fotografie připojené svorkovnice na desce PW58286](pw58286-modbus-svorkovnice.png)
 
 ## Další zdroje
 
