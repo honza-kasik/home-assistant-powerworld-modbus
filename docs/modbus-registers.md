@@ -25,7 +25,7 @@ Na jednotce PW030-DKZLRS-A s deskou PW58286 bylo 23. 11. 2026 zaznamenáno:
 
 Rozdíl mezi skutečnými frekvencemi 49 a 44 Hz odpovídá korekci −5 Hz. **Jde o pozorovanou shodu, nikoli o potvrzený obecný vzorec `výsledná frekvence = R30 + R14`.** Protokol neuvádí základ pro výpočet korekce ani pořadí uplatnění limitů; cílová frekvence při popsaném ohřevu TUV nebyla samostatně načtená.
 
-V balíčku se R14 zobrazuje jako `sensor.pw030_reg_00ff` a je dostupný také v servisním výběru. Hodnota `65531` znamená při znaménkovém 16bitovém převodu `−5`, nikoli 65531 Hz. R14 není v protokolu popsaný jako parametr návratu oleje a toto pozorování nepotvrzuje chování olejového cyklu.
+V balíčku se R14 zobrazuje jako `sensor.pw030_reg_00ff` a je dostupný také v servisním výběru. Hodnota `65531` znamená při znaménkovém 16bitovém převodu `−5`, nikoli 65531 Hz.
 
 ## Zápis v Home Assistantu
 
